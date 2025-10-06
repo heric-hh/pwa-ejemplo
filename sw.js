@@ -4,12 +4,20 @@
 Esta variable almacena el nombre del cache que se utilizara 
 para almacenar los archivos de la PWA.
 */
-const CACHE_NAME = "nombre-del-cache";
+const CACHE_NAME = "mi-pwa-cache-v1";
+const BASE_PATH = "/pwa-ejemplo/";
 
 /*
 Esta variable es un array que contiene las rutas de los archivos que se van a almacenar en el cache.
 */
-const urlsToCache = ["index.html", "offline.html"];
+const urlsToCache = [
+  `${BASE_PATH}index.html`,
+  `${BASE_PATH}/manifest.json`,
+  `${BASE_PATH}styles.css`,
+  `${BASE_PATH}/icons/favicon/icon192x192.png`,
+  `${BASE_PATH}/icons/favicon/icon512x512.png`,
+  `${BASE_PATH}offline.html`,
+];
 
 /* 2. INSTALL -> El evento que se ejecuta al instalar el service worker.
 Este evento se dispara cuando se instala el service worker. En este caso, se abre el cache 
