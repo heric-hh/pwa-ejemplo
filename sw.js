@@ -12,10 +12,10 @@ Esta variable es un array que contiene las rutas de los archivos que se van a al
 */
 const urlsToCache = [
   `${BASE_PATH}index.html`,
-  `${BASE_PATH}/manifest.json`,
+  `${BASE_PATH}manifest.json`,
   `${BASE_PATH}styles.css`,
-  `${BASE_PATH}/icons/favicon/icon192x192.png`,
-  `${BASE_PATH}/icons/favicon/icon512x512.png`,
+  `${BASE_PATH}icons/favicon/icon192x192.png`,
+  `${BASE_PATH}icons/favicon/icon512x512.png`,
   `${BASE_PATH}offline.html`,
 ];
 
@@ -58,7 +58,9 @@ self.addEventListener("fetch", (event) => {
     caches.match(event.request).then((response) => {
       return (
         response ||
-        fetch(event.request).catch(() => caches.match("offline.html"))
+        fetch(event.request).catch(() =>
+          caches.match(`${BASE_PATH}offline.html`)
+        )
       );
     })
   );
