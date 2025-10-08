@@ -25,7 +25,9 @@ especificado por CACHE_NAME y se agregar todos los archivos de urlsToCache al ca
 cache.addAll(urlsToCache).
 */
 self.addEventListener("install", (event) => {
-  event.waitUntil(caches.open(CACHE_NAME).then(cache.addAll(urlsToCache)));
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache))
+  );
 });
 
 /**
