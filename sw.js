@@ -5,7 +5,7 @@ Esta variable almacena el nombre del cache que se utilizara
 para almacenar los archivos de la PWA.
 */
 const CACHE_NAME = "mi-pwa-cache-v1";
-const BASE_PATH = "/pwa-ejemplo/";
+const BASE_PATH = "pwa-ejemplo/";
 
 /*
 Esta variable es un array que contiene las rutas de los archivos que se van a almacenar en el cache.
