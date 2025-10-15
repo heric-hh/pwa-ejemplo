@@ -11,12 +11,12 @@ Esta variable es un array que contiene las rutas de los archivos que se van a al
 Se han actualizado las rutas para funcionar correctamente con GitHub Pages.
 */
 const urlsToCache = [
-  "/",
-  "/index.html",
-  "/manifest.json",
-  "/icons/favicon/icon-192x192.png",
-  "/icons/favicon/icon-512x512.png",
-  "/offline.html",
+  "./",
+  "./index.html",
+  "./manifest.json",
+  "./icons/favicon/icon-192x192.png",
+  "./icons/favicon/icon-512x512.png",
+  "./offline.html",
 ];
 
 /* 2. INSTALL -> El evento que se ejecuta al instalar el service worker.

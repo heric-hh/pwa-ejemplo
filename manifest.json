@@ -1,33 +1,33 @@
 {
   "name": "Mi primer PWA",
   "short_name": "MiPWA",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#fafafe",
   "theme_color": "#317EFB",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "/icons/favicon/icon96x96.png",
+      "src": "icons/favicon/icon96x96.png",
       "sizes": "96x96",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icons/favicon/icon-180x180.png",
+      "src": "icons/favicon/icon-180x180.png",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icons/favicon/icon-192x192.png",
+      "src": "icons/favicon/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "/icons/favicon/icon-512x512.png",
+      "src": "icons/favicon/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable any"
