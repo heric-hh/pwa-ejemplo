@@ -13,13 +13,18 @@
     <h1>Bienvenido a mi PWA</h1>
     <p>Se puede instalar en tu dispositivo móvil</p>
     <button onclick="alert('Hola desde la PWA')">Click aqui</button>
-    
+
+    <ul>
+      <li><a href="pwa-ejemplo/index.html">Inicio</a></li>
+      <li><a href="pwa-ejemplo/login.html">Iniciar Sesion</a></li>
+    </ul>
+
     <!-- Botón de instalación de PWA -->
-    <div id="installContainer" style="margin-top: 20px; display: none;">
+    <div id="installContainer" style="margin-top: 20px; display: none">
       <button id="installButton">Instalar PWA</button>
       <p id="installMessage"></p>
     </div>
-    
+
     <!-- Registrar el Service Worker -->
     <script>
       if ("serviceWorker" in navigator) {
@@ -37,34 +42,36 @@
       let deferredPrompt;
 
       // Detectar si el navegador permite instalar la PWA
-      window.addEventListener('beforeinstallprompt', (e) => {
+      window.addEventListener("beforeinstallprompt", (e) => {
         // Evita que Chrome 67 y versiones anteriores muestren automáticamente el banner
         e.preventDefault();
         // Guarda el evento para que se pueda activar más tarde
         deferredPrompt = e;
-        
+
         // Muestra el botón de instalación
-        const installContainer = document.getElementById('installContainer');
-        installContainer.style.display = 'block';
+        const installContainer = document.getElementById("installContainer");
+        installContainer.style.display = "block";
       });
 
       // Función para manejar la instalación cuando se hace clic en el botón
-      document.getElementById('installButton').addEventListener('click', () => {
+      document.getElementById("installButton").addEventListener("click", () => {
         if (deferredPrompt) {
           // Muestra el prompt de instalación
           deferredPrompt.prompt();
-          
+
           // Espera a que el usuario responda al prompt
           deferredPrompt.userChoice.then((choiceResult) => {
-            if (choiceResult.outcome === 'accepted') {
-              console.log('Usuario aceptó la instalación de PWA');
-              document.getElementById('installMessage').textContent = '¡PWA instalada exitosamente!';
+            if (choiceResult.outcome === "accepted") {
+              console.log("Usuario aceptó la instalación de PWA");
+              document.getElementById("installMessage").textContent =
+                "¡PWA instalada exitosamente!";
             } else {
-              console.log('Usuario rechazó la instalación de PWA');
-              document.getElementById('installMessage').textContent = 'Instalación cancelada';
+              console.log("Usuario rechazó la instalación de PWA");
+              document.getElementById("installMessage").textContent =
+                "Instalación cancelada";
             }
             // Oculta el botón de instalación
-            document.getElementById('installContainer').style.display = 'none';
+            document.getElementById("installContainer").style.display = "none";
             deferredPrompt = null;
           });
         }
